@@ -32,6 +32,7 @@ class SettingController extends Controller
             'facebook_url' => Setting::get('facebook_url', ''),
             'twitter_url' => Setting::get('twitter_url', ''),
             'linkedin_url' => Setting::get('linkedin_url', ''),
+            'instagram_url' => Setting::get('instagram_url', ''),
             'address' => Setting::get('address', '123 Business Ave, Suite 100'),
             'phone' => Setting::get('phone', '+1 234 567 8900'),
             'email' => Setting::get('email', 'info@appwaretech.com'),
@@ -61,6 +62,7 @@ class SettingController extends Controller
             'facebook_url' => 'nullable|url|max:255',
             'twitter_url' => 'nullable|url|max:255',
             'linkedin_url' => 'nullable|url|max:255',
+            'instagram_url' => 'nullable|url|max:255',
             'address' => 'nullable|string',
             'phone' => 'nullable|string|max:50',
             'email' => 'nullable|email|max:255',
@@ -90,7 +92,7 @@ class SettingController extends Controller
         $textSettings = [
             'site_name', 'site_tagline', 'site_description', 'site_keywords',
             'primary_color', 'secondary_color', 'header_bg', 'footer_description',
-            'facebook_url', 'twitter_url', 'linkedin_url', 'address', 'phone', 'email'
+            'facebook_url', 'twitter_url', 'linkedin_url', 'instagram_url', 'address', 'phone', 'email'
         ];
 
         foreach ($textSettings as $key) {

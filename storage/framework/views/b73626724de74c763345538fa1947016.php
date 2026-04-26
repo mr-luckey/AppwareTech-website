@@ -48,7 +48,7 @@
                         <div class="social-links">
                             <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/company/112490319/admin/dashboard/" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github"></i></a>
                         </div>
                     </div>

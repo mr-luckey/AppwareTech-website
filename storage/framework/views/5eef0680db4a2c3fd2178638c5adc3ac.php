@@ -6,12 +6,20 @@
                     <i class="fas fa-rocket me-2"></i><?php echo e(\App\Models\Setting::get('site_name', 'AppWareTech')); ?>
 
                 </h5>
-                <p style="color: rgba(255,255,255,0.7);">Professional software development company delivering innovative solutions for your business growth.</p>
+                <p style="color: rgba(255,255,255,0.7);"><?php echo e(\App\Models\Setting::get('footer_description', 'Professional software development company delivering innovative solutions for your business growth.')); ?></p>
                 <div class="mt-3">
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    <?php if(\App\Models\Setting::get('facebook_url')): ?>
+                    <a href="<?php echo e(\App\Models\Setting::get('facebook_url')); ?>" class="text-white me-3" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <?php endif; ?>
+                    <?php if(\App\Models\Setting::get('twitter_url')): ?>
+                    <a href="<?php echo e(\App\Models\Setting::get('twitter_url')); ?>" class="text-white me-3" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <?php endif; ?>
+                    <?php if(\App\Models\Setting::get('linkedin_url')): ?>
+                    <a href="<?php echo e(\App\Models\Setting::get('linkedin_url')); ?>" class="text-white me-3" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <?php endif; ?>
+                    <?php if(\App\Models\Setting::get('instagram_url')): ?>
+                    <a href="<?php echo e(\App\Models\Setting::get('instagram_url')); ?>" class="text-white" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
@@ -27,13 +35,16 @@
                 <h6 class="fw-bold mb-3" style="color: #ffffff;">Contact Info</h6>
                 <ul class="list-unstyled">
                     <li class="mb-2" style="color: rgba(255,255,255,0.7);">
-                        <i class="fas fa-envelope me-2"></i>info@appwaretech.com
+                        <i class="fas fa-envelope me-2"></i><?php echo e(\App\Models\Setting::get('email', 'info@appwaretech.com')); ?>
+
                     </li>
                     <li class="mb-2" style="color: rgba(255,255,255,0.7);">
-                        <i class="fas fa-phone me-2"></i>+92 300 1234567
+                        <i class="fas fa-phone me-2"></i><?php echo e(\App\Models\Setting::get('phone', '+92 300 1234567')); ?>
+
                     </li>
                     <li class="mb-2" style="color: rgba(255,255,255,0.7);">
-                        <i class="fas fa-map-marker-alt me-2"></i>Lahore, Pakistan
+                        <i class="fas fa-map-marker-alt me-2"></i><?php echo e(\App\Models\Setting::get('address', 'Lahore, Pakistan')); ?>
+
                     </li>
                 </ul>
             </div>

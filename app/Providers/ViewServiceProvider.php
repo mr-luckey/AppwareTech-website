@@ -32,6 +32,7 @@ class ViewServiceProvider extends ServiceProvider
                     'facebook_url' => Setting::get('facebook_url'),
                     'twitter_url' => Setting::get('twitter_url'),
                     'linkedin_url' => Setting::get('linkedin_url'),
+                    'instagram_url' => Setting::get('instagram_url'),
                     'footer_description' => Setting::get('footer_description', 'Innovative software solutions for modern businesses'),
                     'site_description' => Setting::get('site_description', 'Leading software development company'),
                     'site_keywords' => Setting::get('site_keywords', 'web development, software, laravel, wordpress, flutter'),
@@ -45,6 +46,7 @@ class ViewServiceProvider extends ServiceProvider
                     'site_tagline' => 'Software Solutions',
                     'primary_color' => '#4a90e2',
                     'secondary_color' => '#2c3e50',
+                    'instagram_url' => '',
                 ]);
             }
         });
