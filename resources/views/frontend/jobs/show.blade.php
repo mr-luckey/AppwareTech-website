@@ -14,7 +14,42 @@
             margin-top: 0 !important;
             padding-top: 0 !important;
         }
+        /* Back button styling */
+        .btn-back {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.175, 0.675, 0.32, 1.28);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .btn-back:hover {
+            background: linear-gradient(135deg, #6c5ce7, #a855f7) !important;
+            border-color: rgba(108, 92, 231, 0.5);
+            transform: translateY(-4px) rotateX(10deg) rotateY(10deg);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3),
+                        0 0 15px rgba(0, 210, 255, 0.2);
+        }
+        .btn-back i {
+            font-size: 1.1rem;
+        }
     </style>
+    <div class="mb-4">
+        <a href="{{ route('jobs.index') }}" class="btn-back">
+            <i class="fas fa-arrow-left me-2"></i> Back to Jobs
+        </a>
+    </div>
     <!-- Related Information Section -->
     <div class="mt-5 mb-4 text-center">
         <h2 class="fw-bold mb-3" style="color: #ffffff; font-size: 2.5rem;">Job Details & Application Information</h2>

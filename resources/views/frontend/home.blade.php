@@ -129,11 +129,11 @@
             <div class="orb orb-3" style="width: 200px; height: 200px; top: 50%; left: 20%; animation-duration: 30s; background: radial-gradient(circle at 30% 30%, rgba(108,92,231,0.35), rgba(168,85,247,0.2));"></div>
         </div>
         <div class="container position-relative" style="z-index: 5;">
-            <h2 class="fw-bold text-center mb-5" style="font-size: 4rem; color: #ffffff;">Our Team Members</h2>
+            <h2 class="fw-bold text-center mb-5 heading-animate" style="font-size: 4rem; color: #ffffff; position: relative;">Our Team Members</h2>
             <div class="row g-4">
                 @forelse($teamMembers as $member)
                 <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 border-0 shadow-sm text-center p-3">
+                    <div class="card h-100 border-0 shadow-sm text-center p-3 team-card-hover">
                         <img src="{{ asset('storage/' . $member->image) }}" class="rounded-circle mb-3 mx-auto team-member-img" alt="{{ $member->name }}">
                         <h5 class="fw-bold mb-1" style="color: #ffffff; font-size: 1.7rem;">{{ $member->name }}</h5>
                         <p class="text-muted small mb-2" style="color: rgba(255,255,255,0.85); font-size: 1.2rem;">{{ $member->role }}</p>
@@ -150,11 +150,11 @@
     <!-- Partners Section -->
     <section class="py-5">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5" style="font-size: 4rem; color: #ffffff;">Our Partners</h2>
+            <h2 class="fw-bold text-center mb-5 heading-animate" style="font-size: 4rem; color: #ffffff; position: relative;">Our Partners</h2>
             <div class="row g-4 justify-content-center">
                 @forelse($partners as $partner)
                 <div class="col-6 col-md-3 text-center">
-                    <div class="card border-0 shadow-sm p-3 align-items-center h-100">
+                    <div class="card border-0 shadow-sm p-3 align-items-center h-100 partner-card-hover">
                         <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}" style="max-width:80px;max-height:80px;object-fit:contain;" class="mb-2">
                         <div class="fw-bold" style="color: #ffffff;">{{ $partner->name }}</div>
                     </div>
@@ -173,18 +173,18 @@
             <div class="orb orb-2" style="width: 200px; height: 200px; bottom: -50px; right: 10%; animation-duration: 25s; background: radial-gradient(circle at 30% 30%, rgba(0,210,255,0.2), rgba(108,92,231,0.08));"></div>
         </div>
         <div class="container position-relative" style="z-index: 5;">
-            <h2 class="fw-bold text-center mb-5" style="font-size: 4rem; color: #ffffff;">Testimonials</h2>
+            <h2 class="fw-bold text-center mb-5 heading-animate" style="font-size: 4rem; color: #ffffff; position: relative;">Testimonials</h2>
             <div class="row g-4 justify-content-center">
                 @forelse($testimonials as $testimonial)
                 <div class="col-md-4 col-sm-6">
-                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 testimonial-card-hover">
                         @if($testimonial->image)
                             <img src="{{ asset('storage/' . $testimonial->image) }}" 
                                  class="rounded-circle mb-3 mx-auto testimonial-img" 
                                  alt="{{ $testimonial->name }}">
                         @else
                             <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" 
-                                 style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+                                  style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
                                 <i class="fas fa-user fa-2x text-white"></i>
                             </div>
                         @endif
@@ -425,6 +425,71 @@
         color: var(--accent-color);
     }
 
+    /* Heading animation */
+    .heading-animate {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .heading-animate::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        transition: width 0.5s ease;
+        transform: translateX(-50%);
+    }
+    
+    .heading-animate:hover::after {
+        width: 80%;
+    }
+    
+    /* 3D hover effects for cards */
+    .team-card-hover, .partner-card-hover, .testimonial-card-hover {
+        transition: all 0.4s cubic-bezier(0.175, 0.675, 0.32, 1.28);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(25, 35, 60, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(108, 92, 231, 0.2);
+    }
+    
+    .team-card-hover:hover, .partner-card-hover:hover, .testimonial-card-hover:hover {
+        transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+        box-shadow: 
+            0 20px 40px rgba(108, 92, 231, 0.3),
+            0 0 30px rgba(0, 210, 255, 0.15);
+        border-color: rgba(108, 92, 231, 0.4);
+        background: rgba(25, 35, 60, 0.95);
+    }
+    
+    /* Image hover effects */
+    .team-card-hover img, .testimonial-card-hover img {
+        transition: transform 0.5s ease;
+    }
+    
+    .team-card-hover:hover img, .testimonial-card-hover:hover img {
+        transform: scale(1.05);
+    }
+    
+    /* Text color changes on hover */
+    .team-card-hover h5, .partner-card-hover .fw-bold, .testimonial-card-hover h5 {
+        transition: color 0.3s ease;
+    }
+    
+    .team-card-hover:hover h5, .testimonial-card-hover:hover h5 {
+        color: var(--accent-color);
+    }
+    
+    .partner-card-hover:hover .fw-bold {
+        color: var(--accent-color);
+    }
+    
     @keyframes rotate3dY {
         from { transform: rotateY(0deg); }
         to { transform: rotateY(360deg); }

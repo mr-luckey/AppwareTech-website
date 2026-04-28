@@ -68,5 +68,4 @@
             </p>
         </div>
     </div>
-</footer>
-<?php /**PATH D:\wordpress\htdocs\New folder\appwaretech\resources\views/partials/footer.blade.php ENDPATH**/ ?>
+</footer><?php /**PATH D:\wordpress\htdocs\New folder\appwaretech\resources\views/partials/footer.blade.php ENDPATH**/ ?>

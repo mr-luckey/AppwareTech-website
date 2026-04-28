@@ -12,7 +12,39 @@
             margin-top: 0 !important;
             padding-top: 0 !important;
         }
+        /* Back button styling */
+        .btn-back {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .btn-back i {
+            font-size: 1.1rem;
+        }
     </style>
+    <div class="mb-4">
+        <a href="<?php echo e(route('jobs.index')); ?>" class="btn-back">
+            <i class="fas fa-arrow-left me-2"></i> Back to Jobs
+        </a>
+    </div>
     <!-- Related Information Section -->
     <div class="mt-5 mb-4 text-center">
         <h2 class="fw-bold mb-3" style="color: #ffffff; font-size: 2.5rem;">Job Details & Application Information</h2>

@@ -21,7 +21,7 @@
     <!-- Open Graph Tags -->
     <meta property="og:title" content="<?php echo $__env->yieldContent('og_title', \App\Models\Setting::get('site_name', 'AppWareTech')); ?>">
     <meta property="og:description" content="<?php echo $__env->yieldContent('og_description', \App\Models\Setting::get('site_description', '')); ?>">
-    <meta property="og:image" content="<?php echo $__env->yieldContent('og_image', asset('images/logo.png')); ?>">
+    <meta property="og:image" content="<?php echo $__env->yieldContent('og_image', asset('appwaretech-logo.png')); ?>">
     <meta property="og:url" content="<?php echo e(url()->current()); ?>">
     <meta property="og:type" content="website">
     
@@ -31,7 +31,7 @@
     <meta name="twitter:description" content="<?php echo $__env->yieldContent('twitter_description', \App\Models\Setting::get('site_description', '')); ?>">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?php echo e(\App\Models\Setting::get('favicon', asset('images/favicon.ico'))); ?>">
+    <link rel="icon" type="image/jpeg" href="<?php echo e(asset('appwaretech-logo3.jpeg')); ?>">
     
     <!-- CSS Dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
