@@ -26,15 +26,18 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.675, 0.32, 1.28);
             backdrop-filter: blur(10px);
             z-index: 1000;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
         .btn-back:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #6c5ce7, #a855f7) !important;
+            border-color: rgba(108, 92, 231, 0.5);
+            transform: translateY(-4px) rotateX(10deg) rotateY(10deg);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3),
+                        0 0 15px rgba(0, 210, 255, 0.2);
         }
         .btn-back i {
             font-size: 1.1rem;
